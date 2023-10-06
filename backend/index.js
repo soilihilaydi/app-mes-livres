@@ -9,6 +9,8 @@ dotenv.config();
 // Création de l'instance Express
 const app = express();
 
+app.use(express.json()); // Utilisation du middleware pour analyser les requêtes JSON
+
 // Configuration de la connexion à la base de données MySQL en utilisant les variables d'environnement
 const db = mysql.createConnection({
   host: process.env.DB_HOST,        // Adresse du serveur MySQL
@@ -31,7 +33,20 @@ app.get("/livres", (req, res) => {
   });
 });
 
+// Définition de la route POST "/livres" pour créer un nouveau livre
+app.post("/livres", (req, res) => {
+  const q = "INSERT INTO livres (`title`, `desc`, `cover`) VALUES (?)"; // Requête SQL pour insérer un nouveau livre
+  const values = [
+    req.body.title,
+    req.body.desc,
+    req.body.cover,
+  ];
 
+  db.query(q, [values], (err, data) => {
+    if (err) return res.json(err); 
+    return res.json("Le livre a été créé avec succès."); 
+  });
+});
 
 // Démarrage du serveur Express sur le port 8800
 app.listen(8800, () => {
