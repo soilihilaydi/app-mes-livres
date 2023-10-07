@@ -34,17 +34,19 @@ app.get("/livres", (req, res) => {
 });
 
 // Définition de la route POST "/livres" pour créer un nouveau livre
+// Définition de la route POST "/livres" pour créer un nouveau livre
 app.post("/livres", (req, res) => {
   const q = "INSERT INTO livres (`title`, `desc`, `cover`) VALUES (?)"; // Requête SQL pour insérer un nouveau livre
   const values = [
-    req.body.title,
-    req.body.desc,
-    req.body.cover,
+    req.body.title,  // Récupère le titre du livre à partir du corps de la requête
+    req.body.desc,   // Récupère la description du livre à partir du corps de la requête
+    req.body.cover,  // Récupère la couverture du livre à partir du corps de la requête
   ];
 
+  // Exécute la requête SQL pour insérer un nouveau livre dans la base de données
   db.query(q, [values], (err, data) => {
-    if (err) return res.json(err); 
-    return res.json("Le livre a été créé avec succès."); 
+    if (err) return res.json(err); // Gestion des erreurs : renvoie une réponse JSON avec l'erreur en cas d'échec
+    return res.json("Le livre a été créé avec succès."); // Réponse JSON en cas de réussite
   });
 });
 
