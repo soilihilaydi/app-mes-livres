@@ -34,7 +34,6 @@ app.get("/livres", (req, res) => {
 });
 
 // Définition de la route POST "/livres" pour créer un nouveau livre
-// Définition de la route POST "/livres" pour créer un nouveau livre
 app.post("/livres", (req, res) => {
   const q = "INSERT INTO livres (`title`, `desc`, `cover`) VALUES (?)"; // Requête SQL pour insérer un nouveau livre
   const values = [
