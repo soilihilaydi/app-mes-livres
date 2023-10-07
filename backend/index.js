@@ -2,6 +2,7 @@
 import express from "express"; // Import du module Express
 import mysql from "mysql";     // Import du module MySQL
 import dotenv from "dotenv";   // Import du module dotenv
+import cors from "cors";
 
 // Chargement des variables d'environnement à partir du fichier .env
 dotenv.config();
@@ -10,6 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json()); // Utilisation du middleware pour analyser les requêtes JSON
+app.use(cors());
 
 // Configuration de la connexion à la base de données MySQL en utilisant les variables d'environnement
 const db = mysql.createConnection({
