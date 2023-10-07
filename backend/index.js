@@ -37,10 +37,11 @@ app.get("/livres", (req, res) => {
 
 // Définition de la route POST "/livres" pour créer un nouveau livre
 app.post("/livres", (req, res) => {
-  const q = "INSERT INTO livres (`title`, `desc`, `cover`) VALUES (?)"; // Requête SQL pour insérer un nouveau livre
+  const q = "INSERT INTO livres (`title`, `desc`, `price`, `cover` ) VALUES (?)"; // Requête SQL pour insérer un nouveau livre
   const values = [
     req.body.title,  // Récupère le titre du livre à partir du corps de la requête
     req.body.desc,   // Récupère la description du livre à partir du corps de la requête
+    req.body.price,  // Prix du livre provenant de req.body
     req.body.cover,  // Récupère la couverture du livre à partir du corps de la requête
   ];
 
