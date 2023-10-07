@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Définition du composant fonctionnel Update
-export const Update = () => {
+const Update = () => {
   return (
     // Rendu du composant : un simple div contenant le texte "Update"
     <div>Update</div>
