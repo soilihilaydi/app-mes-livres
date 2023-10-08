@@ -1,10 +1,12 @@
 // Import des composants nécessaires de react-router-dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 // Import des composants de pages
 import Livres from "./pages/Livres"; // Page pour afficher la liste des livres
 import Add from "./pages/Add";       // Page pour ajouter un livre
 import Update from "./pages/Update"; // Page pour mettre à jour un livre
+import "./style.css"
 
 function App() {
   return (

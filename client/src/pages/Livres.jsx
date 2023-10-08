@@ -27,13 +27,15 @@ const Livres = () => {
     <div>
       <h1>Mes Livres</h1>
       <div className="livres">
-        {/* Mapping à travers la liste des livres et affichage de chaque livre */}
+        {/* Mapping à travers la liste des livres et affichage suppression et mise a jour de chaque livre */}
         {livres.map(livre => (
           <div className="livre" key={livre.id}>
             {livre.cover && <img src={livre.cover} alt="" />}
             <h2>{livre.title}</h2>
             <p>{livre.desc}</p>
             <span>{livre.price}</span>
+            <button className="delete">Supprimer</button>
+            <button className="update">Mise a jour</button>
           </div>
         ))}
       </div>

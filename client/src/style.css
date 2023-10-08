@@ -1,0 +1,56 @@
+
+/* Styles pour l'élément avec la classe "App" */
+.App {
+  height: 100vh; /* Hauteur égale à 100% de la hauteur de la vue */
+  padding: 0 100px; /* Marge intérieure gauche et droite de 100px */
+  display: flex; /* Utilisation de la disposition flexible */
+  align-items: center; /* Alignement vertical au centre */
+  justify-content: center; /* Alignement horizontal au centre */
+  text-align: center; /* Alignement du texte au centre */
+}
+
+/* Styles pour l'élément avec la classe "livres" */
+.livres {
+  display: flex; /* Utilisation de la disposition flexible */
+}
+
+/* Styles pour l'élément avec la classe "livre" */
+.livre {
+  flex: 1; /* Le composant occupe toute la largeur disponible */
+  display: flex; /* Utilisation de la disposition flexible */
+  flex-direction: column; /* Les éléments à l'intérieur sont disposés en colonnes */
+  align-items: center; /* Alignement vertical au centre */
+  gap: 10px; /* Espacement vertical entre les éléments enfants */
+}
+
+/* Styles pour les éléments "img" */
+img {
+  width: 200px; /* Largeur fixe de l'image */
+  height: 300px; /* Hauteur fixe de l'image */
+  object-fit: cover; /* Ajustement de l'image pour couvrir la zone définie */
+  background-color: aquamarine; /* Couleur de fond de secours pour l'image */
+}
+
+/* Styles pour les éléments avec la classe "delete" */
+.delete {
+  border: none; /* Pas de bordure */
+  padding: 3px 6px; /* Espacement intérieur */
+  background-color: white; /* Couleur de fond blanche */
+  cursor: pointer; /* Curseur de souris en main */
+  border: 1px solid rgb(242, 191, 191); /* Bordure solide avec couleur spécifiée */
+  color: rgb(242, 100, 100); /* Couleur du texte */
+}
+
+/* Styles pour les éléments avec la classe "update" */
+.update {
+  border: none; /* Pas de bordure */
+  padding: 3px 6px; /* Espacement intérieur */
+  background-color: white; /* Couleur de fond blanche */
+  cursor: pointer; /* Curseur de souris en main */
+  border: 1px solid rgb(242, 191, 191); /* Bordure solide avec couleur spécifiée */
+  color: rgb(139, 139, 234); /* Couleur du texte */
+}
+
+
+
+
