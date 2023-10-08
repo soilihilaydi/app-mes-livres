@@ -52,6 +52,30 @@ app.post("/livres", (req, res) => {
   });
 });
 
+
+
+// Cette route gère les requêtes HTTP DELETE pour supprimer un livre par son ID.
+app.delete("/livres/:id", (req, res) => {
+  // Récupère l'ID du livre à partir des paramètres de l'URL.
+  const bookId = req.params.id;
+  
+  // Requête SQL pour supprimer un livre de la base de données en utilisant son ID.
+  const q = "DELETE FROM livres WHERE id = ?";
+
+  // Exécute la requête SQL avec l'ID du livre à supprimer.
+  db.query(q, [bookId], (err, data) => {
+    if (err) {
+      // En cas d'erreur lors de la suppression, renvoie une réponse JSON avec l'erreur.
+      return res.json(err);
+    }
+    
+    // Si la suppression réussit, renvoie une réponse JSON indiquant que le livre a été supprimé avec succès.
+    return res.json("Le livre a été supprimé avec succès.");
+  });
+});
+
+
+
 // Démarrage du serveur Express sur le port 8800
 app.listen(8800, () => {
   console.log("Connected to backend!"); // Affiche un message lorsque le serveur démarre
