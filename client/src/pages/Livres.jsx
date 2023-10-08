@@ -23,6 +23,22 @@ const Livres = () => {
     fetchAllLivres(); // Appel de la fonction pour charger les livres au montage du composant
   }, []); // Le tableau vide en second argument signifie que useEffect s'exécute une seule fois au montage
 
+
+
+  // Cette fonction asynchrone gère la suppression d'un livre en utilisant une requête HTTP DELETE.
+const handleDelete = async (id) => {
+  try {
+    // Envoie une requête DELETE à l'URL spécifiée pour supprimer le livre avec l'ID donné.
+    await axios.delete("http://localhost:8800/Livres/" + id);
+
+    // Recharge la page actuelle après la suppression réussie.
+    window.location.reload();
+  } catch (err) {
+    // En cas d'erreur lors de la suppression, affiche l'erreur dans la console.
+    console.log(err);
+  }
+};
+
   return (
     <div>
       <h1>Mes Livres</h1>
@@ -34,7 +50,7 @@ const Livres = () => {
             <h2>{livre.title}</h2>
             <p>{livre.desc}</p>
             <span>{livre.price}</span>
-            <button className="delete">Supprimer</button>
+            <button className="delete" onClick={()=>handleDelete(livre.id)}>Supprimer</button>
             <button className="update">Mise a jour</button>
           </div>
         ))}

@@ -12,6 +12,8 @@
 /* Styles pour l'élément avec la classe "livres" */
 .livres {
   display: flex; /* Utilisation de la disposition flexible */
+  gap: 10px; /* "gap" spécifie l'espacement entre les éléments enfants dans la direction de la colonne (verticale) */
+  
 }
 
 /* Styles pour l'élément avec la classe "livre" */
