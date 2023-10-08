@@ -22,7 +22,7 @@ function App() {
           <Route path="/add" element={<Add />} />
 
           {/* Route pour la page de mise à jour de livre ("/update") avec le composant Update */}
-          <Route path="/update" element={<Update />} />
+          <Route path="/update/:id" element={<Update />} />
         </Routes>
       </BrowserRouter>
     </div>

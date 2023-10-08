@@ -54,5 +54,38 @@ img {
 }
 
 
+button {
+  border: none; /* Supprime la bordure du bouton */
+  padding: 10px; /* Ajoute de la marge intérieure de 10 pixels autour du texte du bouton */
+  background-color: white; /* Définit la couleur de fond du bouton en blanc */
+  color: white; /* Définit la couleur du texte en blanc (à corriger) */
+  font-weight: bold; /* Définit le poids de la police du texte en gras */
+  cursor: pointer; /* Change le curseur de la souris en une main pointer lorsque survolé */
+}
+
+.form {
+  display: flex; /* Utilisation de la disposition flexible pour les éléments enfants */
+  flex-direction: column; /* Définit la direction de l'empilement des éléments enfants en colonne */
+  gap: 20px; /* Ajoute un espacement vertical de 20 pixels entre les éléments enfants */
+}
+
+input {
+  width: 250px; /* Définit la largeur des champs de saisie à 250 pixels */
+  padding: 10px; /* Ajoute de la marge intérieure de 10 pixels aux champs de saisie */
+  border: 1px solid gray; /* Définit une bordure de 1 pixel solide de couleur grise autour des champs de saisie */
+}
+
+.formButton {
+  border: none; /* Supprime la bordure du bouton */
+  padding: 10px; /* Ajoute de la marge intérieure de 10 pixels autour du texte du bouton */
+  background-color: rgb(244, 142, 74); /* Définit la couleur de fond du bouton en orange */
+  color: white; /* Définit la couleur du texte en blanc */
+  font-weight: bold; /* Définit le poids de la police du texte en gras */
+  cursor: pointer; /* Change le curseur de la souris en une main pointer lorsque survolé */
+}
+
+
+
+
 
 

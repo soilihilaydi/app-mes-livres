@@ -16,7 +16,7 @@ const Add = () => {
   });
 
   // Hook de navigation pour rediriger l'utilisateur
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   // Fonction pour gérer les changements dans les champs de saisie
   const handleChange = (e) => {
@@ -40,14 +40,14 @@ const Add = () => {
   // Affichage du composant
   return ( 
     <div className='form'>
-       <h1>Add New Book</h1>
+       <h1>Ajouter un nouveau livre</h1>
        {/* Inputs pour saisir les détails du nouveau livre */}
        <input type="text" placeholder="title" onChange={handleChange} name="title"/>
        <input type="text" placeholder="desc" onChange={handleChange} name="desc" />
        <input type="number" placeholder="price" onChange={handleChange} name="price" />
        <input type="text" placeholder="cover" onChange={handleChange} name="cover" />
        {/* Bouton pour ajouter le livre */}
-       <button onClick={handleClick}>Ajouter</button>
+       <button className="formButton" onClick={handleClick}>Ajouter</button>
     </div>
   )
 }
