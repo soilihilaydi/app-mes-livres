@@ -75,6 +75,29 @@ app.delete("/livres/:id", (req, res) => {
 });
 
 
+app.put("/livres/:id", (req, res) => {
+  // Récupération de l'identifiant du livre à mettre à jour depuis les paramètres de la requête.
+  const bookId = req.params.id;
+
+  // Requête SQL pour mettre à jour les informations du livre dans la base de données.
+  const q = "UPDATE livres SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ? WHERE id = ?";
+
+  // Récupération des valeurs mises à jour du livre depuis le corps de la requête.
+  const values = [
+    req.body.title,   // Nouveau titre du livre
+    req.body.desc,    // Nouvelle description du livre
+    req.body.price,   // Nouveau prix du livre
+    req.body.cover,   // Nouvelle couverture du livre
+  ];
+
+  // Exécution de la requête SQL en utilisant la méthode `query` de la base de données.
+  db.query(q, [...values, bookId], (err, data) => {
+    if (err) return res.json(err); // En cas d'erreur lors de l'exécution de la requête SQL, renvoyer une réponse JSON avec l'erreur.
+    return res.json("Le livre a été mise à jour avec succès."); // En cas de succès, renvoyer une réponse JSON indiquant que le livre a été mis à jour.
+  });
+});
+
+
 
 // Démarrage du serveur Express sur le port 8800
 app.listen(8800, () => {
